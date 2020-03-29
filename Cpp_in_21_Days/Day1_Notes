@@ -3,7 +3,7 @@ We generally write programs using a high-level language, which contains words an
 A program written in this high-level language is called a source code. 
 Thus, for a computer to understand, the source code needs to be converted to machine code using a compiler or an interpreter.
 
-A compiler or an interpreter is a program that converts program written in high-level language into machine code understood by the computer.
+**A compiler or an interpreter is a program that converts program written in high-level language into machine code understood by the computer.**
 
 * Interpreter - translates and executes a program as it reads it, turning the program instructions, or source code, directly into actions
 Used by: PHP, Perl, Python, Ruby
