@@ -52,23 +52,23 @@ void removeLast1(ListType & list) {
 // PRE: list is a well-formed linked list
 // this version uses two pointers for traversal
 void removeLast2(ListType & list) {
- if (list == NULL) { // no elements in list
- return;
- }
- if (list->next == NULL) { // one element in list
- delete list;
- list = NULL;
- return;
- }
+     if (list == NULL) { // no elements in list
+        return;
+     }
+     if (list->next == NULL) { // one element in list
+        delete list;
+        list = NULL;
+        return;
+     }
 
- Node * prev = list;
- Node *curr = list ->next;
- while (curr->next != NULL) {
- prev = curr;
- curr = curr->next;
- }
- delete curr; // (2)
- prev->next = NULL; // (3)
+     Node * prev = list;
+     Node *curr = list ->next;
+     while (curr->next != NULL) {
+        prev = curr;
+        curr = curr->next;
+     }
+     delete curr; // (2)
+     prev->next = NULL; // (3)
 }
 
 int main() {
