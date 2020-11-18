@@ -32,50 +32,50 @@ void printList(ListType list) {
 }
 
 void splice(ListType & list, int value, ListType subList){
-
+	
 	//if empty list
 	if(list == NULL){
 		list = subList;
 		return;
-}
-//if empty sublist 
-if(subList == NULL){
-	return;
-}
-//if inserting at the front of the list
-if(value == 0) {
-	//iterate through sublist and connect last element to start of list, update list pointer 
-	ListType p = subList;
-	while(p->next != NULL){
-		p = p->next;
 	}
-	p->next = list;
-	list = subList;
-} else {
-	//else if inserting in middle or end, iterate first through list to find location
-	ListType l = list;
-	ListType lag = l;
-
-	int index = 0;
-while(index < value && l != NULL){
-	index++;
-	lag = l;
-	l = l->next;
-}
-//if(l is null), you are inserting at the end
-if(l == NULL){
-	lag->next = subList;
-} else {
-//else inserting in middle, connect the subList between lag and l
-	lag->next = subList;  //connect front to list
-	ListType sub = subList;
-	while(sub->next != NULL){
-		sub = sub->next;
+	//if empty sublist 
+	if(subList == NULL){
+		return;
 	}
-	sub->next = l; ///connect end to list
-}
+	//if inserting at the front of the list
+	if(value == 0) {
+		//iterate through sublist and connect last element to start of list, update list pointer 
+		ListType p = subList;
+		while(p->next != NULL){
+			p = p->next;
+		}
+		p->next = list;
+		list = subList;
+	} else {
+		//else if inserting in middle or end, iterate first through list to find location
+		ListType l = list;
+		ListType lag = l;
 
-}
+		int index = 0;
+		while(index < value && l != NULL){
+			index++;
+			lag = l;
+			l = l->next;
+		}
+		//if(l is null), you are inserting at the end
+		if(l == NULL){
+		lag->next = subList;
+		} else {
+		//else inserting in middle, connect the subList between lag and l
+			lag->next = subList;  //connect front to list
+			ListType sub = subList;
+			while(sub->next != NULL){
+				sub = sub->next;
+			}
+			sub->next = l; ///connect end to list
+		}
+
+	}
 }
 
 int main(){
